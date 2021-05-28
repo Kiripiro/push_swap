@@ -6,7 +6,7 @@
 /*   By: atourret <atourret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:39:41 by atourret          #+#    #+#             */
-/*   Updated: 2021/05/24 11:21:17 by atourret         ###   ########.fr       */
+/*   Updated: 2021/05/28 15:49:01 by atourret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ typedef struct s_main
 }t_main;
 
 void	parsing(t_main *main, char **av, int i);
-void	solver(t_main *main, int ac);
+void	solver(t_main *main);
+
+int		check_move_chunk(t_list_int *stack, int pivot);
 
 int		swap(t_list_int **stack, int i);
 int		pa(t_list_int **stack_a, t_list_int **stack_b);

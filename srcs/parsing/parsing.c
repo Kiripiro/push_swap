@@ -6,7 +6,7 @@
 /*   By: atourret <atourret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:39:37 by atourret          #+#    #+#             */
-/*   Updated: 2021/05/20 15:17:53 by atourret         ###   ########.fr       */
+/*   Updated: 2021/05/28 16:00:33 by atourret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,18 @@ int	check_av(t_main *main, char *av)
 {
 	int	i;
 
-	i = -1;
-	while (av[++i])
+	i = 0;
+	while (av[i])
+	{
 		if (!ft_ischar("0123456789-", av[i]))
 			quit(main, "Error\n", 0);
+		if (av[i] == '-')
+			i++;
+		while (ft_isdigit(av[i]))
+			i++;
+		if (av[i] || (i == 1 && av[0] == '-'))
+			quit(main, "Error\n", 0);
+	}
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: atourret <atourret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:36:51 by atourret          #+#    #+#             */
-/*   Updated: 2021/05/24 13:05:48 by atourret         ###   ########.fr       */
+/*   Updated: 2021/05/28 15:21:10 by atourret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ int	main(int ac, char **av)
 		start = -1;
 	}
 	parsing(&main, av, start);
-	solver(&main, ac - 1);
-	dprintf(1, "\n-----A----\n");
-	print_list(main.stack_a);
-	dprintf(1, "\n-----B----\n");
-	print_list(main.stack_b);
+	solver(&main);
+	// dprintf(1, "\n-----A----\n");
+	// print_list(main.stack_a);
+	// dprintf(1, "\n-----B----\n");
+	// print_list(main.stack_b);
 	quit(&main, "", 1);
 	return (0);
 }
