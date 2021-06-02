@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atourret <atourret@student.42.fr>          +#+  +:+       +#+        */
+/*   By: atourret <atourret@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:45:42 by atourret          #+#    #+#             */
-/*   Updated: 2021/05/19 17:29:53 by atourret         ###   ########.fr       */
+/*   Updated: 2021/06/02 11:58:59 by atourret         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 1
-#endif
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
 
-typedef struct		s_list_int
+typedef struct s_list_int
 {
 	int					content;
 	int					rank;
 	struct s_list_int	*next;
 }t_list_int;
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -96,10 +96,11 @@ void				ft_dellst_front_int(t_list_int **list);
 void				ft_lstaff_int(t_list_int *list);
 void				ft_lstaff_color_int(t_list_int *list, char *color);
 void				ft_lstclear_int(t_list_int **list);
-t_list_int 			*ft_lstlast_int(t_list_int *lst);
-t_list_int 			*ft_lstn(t_list_int *lst, int n);
+t_list_int			*ft_lstlast_int(t_list_int *lst);
+t_list_int			*ft_lstn(t_list_int *lst, int n);
 t_list_int			*ft_lstnew_int(int content);
 int					ft_lstsize_int(t_list_int *lst);
 long long			ft_atoll(char *str);
 int					*ft_sort_int_tab(int *tab, int size);
+
 #endif

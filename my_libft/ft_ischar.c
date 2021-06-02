@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ischar.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atourret <atourret@student.42.fr>          +#+  +:+       +#+        */
+/*   By: atourret <atourret@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 13:47:12 by atourret          #+#    #+#             */
-/*   Updated: 2021/05/11 11:19:11 by atourret         ###   ########.fr       */
+/*   Updated: 2021/06/02 11:41:32 by atourret         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_ischar(char *str, int c)
 {
-	int i;
+	int	i;
 
 	if (!str)
 		return (0);

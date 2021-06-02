@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstaff_int.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atourret <atourret@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/02 13:55:20 by atourret          #+#    #+#             */
+/*   Updated: 2021/06/02 13:55:21 by atourret         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../libft.h"
 
 void	ft_lstaff_int(t_list_int *list)
 {
-	t_list_int *tmp;
+	t_list_int	*tmp;
 
 	tmp = list;
 	while (tmp != NULL)
@@ -15,7 +27,7 @@ void	ft_lstaff_int(t_list_int *list)
 
 void	ft_lstaff_color_int(t_list_int *list, char *color)
 {
-	t_list_int *tmp;
+	t_list_int	*tmp;
 
 	tmp = list;
 	while (tmp != NULL)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atourret <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: atourret <atourret@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 14:33:22 by atourret          #+#    #+#             */
-/*   Updated: 2020/11/27 10:10:17 by atourret         ###   ########lyon.fr   */
+/*   Updated: 2021/06/02 11:42:37 by atourret         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,15 @@ static int	ft_count(int nb)
 	return (i);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int				size;
 	char			*num;
 	unsigned int	nb;
 
 	size = ft_count(n);
-	if (!(num = (char *)malloc(sizeof(char) * size + 1)))
+	num = (char *)malloc(sizeof(char) * size + 1);
+	if (!num)
 		return (0);
 	if (n == 0)
 		num[0] = '0';

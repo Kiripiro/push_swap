@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front_int.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atourret <atourret@student.42.fr>          +#+  +:+       +#+        */
+/*   By: atourret <atourret@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 16:21:14 by ldauga            #+#    #+#             */
-/*   Updated: 2021/05/18 14:54:52 by atourret         ###   ########.fr       */
+/*   Created: 2021/06/02 13:54:58 by atourret          #+#    #+#             */
+/*   Updated: 2021/06/02 13:54:59 by atourret         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_front_int(t_list_int **list, int value)
 {
-	t_list_int 	*new;
+	t_list_int	*new;
 
 	new = malloc(sizeof(*new));
 	if (new == NULL)

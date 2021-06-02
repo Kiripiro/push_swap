@@ -25,7 +25,7 @@ INCLUDES_PATH	=	./incs
 LIBFT_PATH		=	./my_libft
 
 GCC				=	gcc
-FLAGS			=	-Wall -Wextra -Werror #-g3 -fsanitize=address
+FLAGS			=	-Wall -Wextra -Werror
 OBJECTS			=	$(SOURCES:.c=.o)
 RM				=	rm -f
 
@@ -49,7 +49,7 @@ oclean:
 clean: oclean
 	@$(MAKE) -C $(LIBFT_PATH) clean
 
-fclean:
+fclean: clean
 	@$(MAKE) -C $(LIBFT_PATH) fclean
 	@printf "$(BLUE)$(NAME): $(RED)Cleaning compiled program $(NAME).\n$(RESET)"
 	@$(RM) $(NAME)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atourret <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: atourret <atourret@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 13:24:47 by atourret          #+#    #+#             */
-/*   Updated: 2020/11/26 14:21:55 by atourret         ###   ########lyon.fr   */
+/*   Updated: 2021/06/02 11:43:45 by atourret         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	head = 0;
 	while (lst)
 	{
-		if (!(new = ft_lstnew(f(lst->content))))
+		new = ft_lstnew(f(lst->content));
+		if (!new)
 		{
 			ft_lstclear(&lst, del);
 			ft_lstclear(&head, del);

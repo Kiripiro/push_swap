@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atourret <atourret@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leodauga <leodauga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 12:39:37 by atourret          #+#    #+#             */
-/*   Updated: 2021/05/28 16:00:33 by atourret         ###   ########.fr       */
+/*   Updated: 2021/05/29 18:40:24 by leodauga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	*fill_tab(t_main *main)
 {
-	int	i;
+	int			i;
+	int			*tab;
 	t_list_int	*tmp;
-	int	*tab;
 
 	i = -1;
 	tmp = main->stack_a;
@@ -33,9 +33,9 @@ int	*fill_tab(t_main *main)
 
 int	rank_stack(t_main *main)
 {
-	int	i;
+	int			i;
+	int			*tab;
 	t_list_int	*tmp;
-	int	*tab;
 
 	tmp = main->stack_a;
 	main->lst_size = ft_lstsize_int(tmp);
@@ -91,7 +91,7 @@ int	check_av(t_main *main, char *av)
 void	parsing(t_main *main, char **av, int i)
 {
 	long int	nb;
-	
+
 	while (av[++i])
 	{
 		if (check_av(main, av[i]))

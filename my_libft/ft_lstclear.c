@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atourret <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: atourret <atourret@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 11:31:00 by atourret          #+#    #+#             */
-/*   Updated: 2020/11/27 14:58:50 by atourret         ###   ########lyon.fr   */
+/*   Updated: 2021/06/02 11:42:56 by atourret         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *current;
-	t_list *temp;
+	t_list	*current;
+	t_list	*temp;
 
 	current = *lst;
 	temp = 0;

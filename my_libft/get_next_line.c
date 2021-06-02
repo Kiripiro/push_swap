@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atourret <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: atourret <atourret@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 19:44:58 by atourret          #+#    #+#             */
-/*   Updated: 2021/05/10 13:40:26 by atourret         ###   ########lyon.fr   */
+/*   Updated: 2021/06/02 13:52:38 by atourret         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*ft_make_line(char *buff, char *new_line)
 	return (new_line);
 }
 
-int		get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	char			buff[BUFFER_SIZE + 1];
 	static char		*new_line[4096];
@@ -62,8 +62,10 @@ int		get_next_line(int fd, char **line)
 
 	if (BUFFER_SIZE <= 0 || fd < 0 || line == NULL)
 		return (-1);
-	while ((r = read(fd, &buff, BUFFER_SIZE)))
+	r = 1;
+	while (r)
 	{
+		r = read(fd, &buff, BUFFER_SIZE);
 		if (r <= 0)
 			return (r);
 		buff[r] = '\0';
@@ -72,10 +74,9 @@ int		get_next_line(int fd, char **line)
 			break ;
 	}
 	if (r <= 0 && !new_line[fd])
-	{
 		*line = ft_strdup("");
+	if (r <= 0 && !new_line[fd])
 		return (r);
-	}
 	new_line[fd] = ft_clean_line(new_line[fd], line, r);
 	if (r <= 0 && !new_line[fd])
 		return (r);

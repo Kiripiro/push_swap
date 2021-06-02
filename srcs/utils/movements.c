@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movements.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atourret <atourret@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leodauga <leodauga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 16:57:05 by atourret          #+#    #+#             */
-/*   Updated: 2021/05/21 14:41:41 by atourret         ###   ########.fr       */
+/*   Updated: 2021/05/29 18:34:35 by leodauga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	swap(t_list_int **stack, int i)
 
 int	ss(t_list_int **stack_a, t_list_int **stack_b)
 {
-	if (!stack_a || !(*stack_a)->next ||!stack_b || !(*stack_b)->next)
+	if (!stack_a || !(*stack_a)->next || !stack_b || !(*stack_b)->next)
 		return (0);
 	swap(stack_a, 0);
 	swap(stack_b, 1);
@@ -49,7 +49,7 @@ int	pa(t_list_int **stack_a, t_list_int **stack_b)
 
 int	pb(t_list_int **stack_a, t_list_int **stack_b)
 {
-	if (!stack_a ||!stack_b)
+	if (!stack_a || !stack_b)
 		return (0);
 	ft_lstadd_front_int(stack_b, (*stack_a)->content);
 	(*stack_b)->rank = (*stack_a)->rank;
@@ -57,4 +57,3 @@ int	pb(t_list_int **stack_a, t_list_int **stack_b)
 	ft_putstr_fd("pb\n", 1);
 	return (1);
 }
-

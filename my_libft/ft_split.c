@@ -3,21 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atourret <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: atourret <atourret@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 14:01:29 by atourret          #+#    #+#             */
-/*   Updated: 2020/11/28 13:24:30 by atourret         ###   ########lyon.fr   */
+/*   Updated: 2021/06/02 11:47:30 by atourret         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		*str_truncator(char const *str, int start, int end)
+static char	*str_truncator(char const *str, int start, int end)
 {
 	char	*result;
 	int		i;
 
-	if (!(result = malloc((end - start + 1) * sizeof(char))))
+	result = malloc((end - start + 1) * sizeof(char));
+	if (!result)
 		return (0);
 	i = 0;
 	while (i < end - start)
@@ -29,11 +30,11 @@ static char		*str_truncator(char const *str, int start, int end)
 	return (result);
 }
 
-static int		count_words(char const *str, char c)
+static int	count_words(char const *str, char c)
 {
 	int	str_len;
-	int word_counter;
-	int i;
+	int	word_counter;
+	int	i;
 
 	str_len = ft_strlen(str);
 	word_counter = 0;
@@ -45,19 +46,19 @@ static int		count_words(char const *str, char c)
 		if (i < str_len)
 			word_counter++;
 		else
-			continue;
+			continue ;
 		while (i < str_len && str[i] != c)
 			i++;
 	}
 	return (word_counter);
 }
 
-static int		complete_words(char const *str, char **result, char c)
+static int	complete_words(char const *str, char **result, char c)
 {
 	int	str_len;
-	int word_counter;
-	int i;
-	int temp;
+	int	word_counter;
+	int	i;
+	int	temp;
 
 	str_len = ft_strlen(str);
 	word_counter = 0;
@@ -72,7 +73,7 @@ static int		complete_words(char const *str, char **result, char c)
 			word_counter++;
 		}
 		else
-			continue;
+			continue ;
 		while (i < str_len && str[i] != c)
 			i++;
 		result[word_counter - 1] = str_truncator(str, temp, i);
@@ -80,7 +81,7 @@ static int		complete_words(char const *str, char **result, char c)
 	return (word_counter);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**result;
 	int		str_len;
@@ -90,7 +91,8 @@ char			**ft_split(char const *s, char c)
 		return (0);
 	str_len = ft_strlen(s);
 	word_counter = count_words(s, c);
-	if (!(result = malloc((word_counter + 1) * sizeof(char*))))
+	result = malloc((word_counter + 1) * sizeof(char *));
+	if (!result)
 		return (0);
 	complete_words(s, result, c);
 	result[word_counter] = 0;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize_int.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atourret <atourret@student.42.fr>          +#+  +:+       +#+        */
+/*   By: atourret <atourret@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 16:30:07 by ldauga            #+#    #+#             */
-/*   Updated: 2021/05/22 15:42:09 by atourret         ###   ########.fr       */
+/*   Created: 2021/06/02 13:55:51 by atourret          #+#    #+#             */
+/*   Updated: 2021/06/02 13:55:53 by atourret         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
